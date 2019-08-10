@@ -2,7 +2,6 @@
     <div class="pageTwo">
         <getBack />
         <div class="swiper">
-
         </div>
     </div>
 </template>
@@ -21,10 +20,8 @@ export default {
   box-sizing: border-box;
 }
 .pageTwo{
-    /* position: absolute; */
     width: 100%;
     height: 100%;
     background: lightcoral;
-    overflow: hidden;
 }
 </style>

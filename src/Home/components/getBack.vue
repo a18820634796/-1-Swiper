@@ -1,8 +1,9 @@
 <template>
-    <div class="getBack" ><span class="getBackFont" @click="getBack()">&lt</span></div>
+    <div class="getBack" ><span class="getBackFont" @click="getBack()"></span></div>
 </template>
 <script>
 export default {
+    name: 'getBack',
     methods:{
         getBack(){
             this.$router.go(-1)

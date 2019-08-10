@@ -42,14 +42,25 @@ export default {
   width: 100%;
   height: 100%;
   position: absolute;
+  -webkit-animation-name: all; /*动画名称*/
+  -webkit-animation-duration: 2s;
+}
+@-webkit-keyframes all {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
 }
 .content{
   width: 100%;
   height: 90%;
   top: 0;
+  /* position: absolute; */
 }
 .topbar {
-  position: relative;
+  position: absolute;
   bottom: 0;
   width: 100%;
   height: 10%;

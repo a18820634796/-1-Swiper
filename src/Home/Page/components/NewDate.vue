@@ -1,20 +1,20 @@
 <template>
   <div class="newDate">
-    <div class="getDate">
-      当前时间：{{newDate}}
-    </div>
+    <div class="getDate">{{time}}</div>
   </div>
 </template>
 <script>
 export default {
   data() {
     return {
-      newDate: new Date(),
+      newDate: "",
+      time: "",
+      outTime: 6
     };
   },
   methods: {
-    getTime() {
-    //   setInterval(function() {
+    beforeCreate() {
+      let clock = window.setInterval(() => {
         var date = new Date();
         var year = date.getFullYear(); //获取当前年份
         var mon = date.getMonth() + 1; //获取当前月份
@@ -23,17 +23,13 @@ export default {
         var h = date.getHours(); //获取小时
         var m = date.getMinutes(); //获取分钟
         var s = date.getSeconds(); //获取秒
-        // var getTime = document.getElementsByClassName("getDate");
-        // getTime.innerHTML = "nihao";
-        this.newDate = year+'年'+mon+'月'+da+'日'+'    '+h+':'+m+':'+s;
-        console.log("11");
-    //   });
+        const time = '当前时间：'+ year+'年'+mon+'月'+da+'日'+' '+h+':'+m+':'+s;
+        this.time = time;
+      }, 1000);
     }
   },
-  mounted() {
-    this.getTime();
-    // this.newDate = new Date().getHours();
-    // console.log('11s')
+  created() {
+    this.beforeCreate();
   }
 };
 </script>
@@ -44,8 +40,9 @@ export default {
   background: orange;
   font-size: 1rem;
 }
-.getDate{
-    padding: 0.8rem;
-    padding-bottom: 0.8rem;
+.getDate {
+  font-size: 0.8rem;
+  padding: 0.8rem;
+  padding-bottom: 0.8rem;
 }
 </style>
